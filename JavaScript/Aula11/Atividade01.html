@@ -1,0 +1,39 @@
+<!--Objetivo da Atividade: Construir o 'ex009.js' em forma de site!-->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade01</title>
+    <style>
+        body {
+            font: normal 16pt arial;
+            color: white;
+            background-image: url(https://images.hdqwalls.com/download/retrowave-ap-1366x768.jpg);
+        }
+    </style>
+</head>
+<body>
+    <h1>Você é Brasileiro?</h1>
+    <p>Digite aqui seu país: <input type="text" name="país" id="país"></p>
+    <input type="button" value="Checar" id="checkButton" onclick="checar()">
+    <div id="res">
+    </div>
+    <div id="erro">
+    </div>
+    <script>
+        function checar() {
+            var país = window.document.getElementById('país')
+            var res = window.document.getElementById('res')
+            var erro = window.document.getElementById('erro')
+            var vPaís = país.value
+            console.log(typeof(vPaís))
+            if (vPaís == 'Brasil' || vPaís == 'brasil') {
+                res.innerHTML = 'Brasileiro'
+            } else {
+                res.innerHTML = 'Estrangeiro'
+            }
+        }
+    </script>
+</body>
+</html>

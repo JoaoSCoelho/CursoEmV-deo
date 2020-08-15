@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var quebrada = false
+        function mudaLampada(tipo) {
+            if (!quebrada) {
+                document.getElementById('luz').src = tipo
+                if (tipo == '../curso-html5-pacote01/projeto-glass-html5/_imagens/lampada-quebrada.jpg') {
+                    quebrada = true
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Acenda a lâmpada</h1>
+    <img onmouseenter='mudaLampada("../curso-html5-pacote01/projeto-glass-html5/_imagens/lampada-acesa.jpg")' onmouseout="mudaLampada('../curso-html5-pacote01/projeto-glass-html5/_imagens/lampada-apagada.jpg')" onclick='mudaLampada("../curso-html5-pacote01/projeto-glass-html5/_imagens/lampada-quebrada.jpg")' id="luz" src="../curso-html5-pacote01/projeto-glass-html5/_imagens/lampada-apagada.jpg" alt="">
+</body>
+</html>

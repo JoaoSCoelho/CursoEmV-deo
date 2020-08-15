@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dados Online</title>
+    <style>
+        body {
+            background-color: yellowgreen;
+            font: normal 12pt arial 
+        }
+        h1 {
+            color: whitesmoke
+        }
+    </style>
+</head>
+<body>
+    <h1>Aqui estão seus Dados</h1>
+</body>
+<script>
+    var nome = window.prompt('Qual o seu nome?')
+    const sobrenome = window.prompt('Qual seu sobrenome?')
+    if(sobrenome === null) {
+        window.prompt('Qual seu sobrenome?')
+    }
+    var idade = Number(window.prompt('Qual sua idade?'))
+    var peso = Number(window.prompt('Qual seu peso?'))
+    var altura = Number(window.prompt('Qual sua altura? (apenas números)'))
+    document.write(`Seu nome completo é <strong>${nome} ${sobrenome}</strong></br>`)
+    
+</script>
+</html>

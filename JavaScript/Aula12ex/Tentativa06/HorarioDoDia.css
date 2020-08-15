@@ -1,0 +1,32 @@
+body {
+    font: normal 20pt arial;
+    text-align: center;
+}
+header {
+    color: white;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.671);
+}
+section {
+    border-radius: 10px;
+    background-color: white;
+    margin: auto;
+    width: 440px;
+    padding: 15px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.671);
+    height: 440px;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.671);
+}
+footer {
+    font-style: oblique;
+    color: white;
+    text-align: center;
+}
+div#divFoto {
+    height: 300px;
+    width: 300px;
+    margin-top: 20px;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+    border-radius: 100%;
+    background-position: center;
+}

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentativa05</title>
+</head>
+<body>
+    <center><h1>Que dia é hoje?</h1></body></center>
+    <div id="data">
+        Data
+    </div>
+    <div id="dia">
+        Dia
+    </div>
+    <div id="hora">
+        Hora
+    </div>
+    <input type="button" value="Atualizar" onclick="att()" onmouseout="reload()">
+    <script>
+        var atualData = new Date()
+        var diaSem = atualData.getDay()
+        switch(diaSem) {
+            case 0:
+                diaSem = 'Domingo'
+                break
+            case 1:
+                diaSem = 'Segunda-feira'
+                break
+            case 2:
+                diaSem = 'Terça-feira'
+                break
+            case 3:
+                diaSem = 'Quarta-feira'
+                break
+            case 4:
+                diaSem = 'Quinta-feira'
+                break
+            case 5:
+                diaSem = 'Sexta-feira'
+                break
+            case 6:
+                diaSem = 'Sábado'
+                break 
+        }  
+        function att() {
+            var data = document.getElementById('data')
+            var dia = document.getElementById('dia')
+            var hora = document.getElementById('hora')
+            data.innerHTML = `${atualData.getDate()}/${atualData.getMonth()}/${atualData.getFullYear()}`
+            dia.innerHTML = `${diaSem}`
+            hora.innerHTML = `${atualData.getHours()}:${atualData.getMinutes()}:${atualData.getSeconds()}`
+        }
+        function reload() {
+            window.location.reload()
+        }
+    </script>
+</body>
+</html>

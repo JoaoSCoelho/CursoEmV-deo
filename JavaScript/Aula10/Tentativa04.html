@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentativa 04</title>
+    <style>
+        h1 {
+            color: whitesmoke;
+            font: normal 44pt arial;
+        }
+        body {
+            background-color: rgb(53, 8, 255);
+            color: rgb(21, 255, 0);
+            font: normal 15pt arial
+        }
+        input#peso {
+            width: 60px;
+            margin-left: 9px;
+            margin-block-end: 5px;
+        }
+        input#altura {
+            width: 60px;
+            margin-block-end: 5px;
+        }
+        div#res {
+            color: white;
+            background-color: green;
+            width: 200px;
+            text-align: center;
+        }
+        input#calcButton {
+            margin-top: 5px;
+            margin-block-end: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1><strong><center>IMC</center></strong></h1>
+    <center>Peso <input type="number" name="peso" id="peso"></center>
+    <center>Altura <input type="number" name="altura" id="altura"></center>
+    <center><input type="button" value="CALCULAR" id="calcButton" onclick="somar()"></center>
+    <center><div id= 'res'></div></center>
+    <script>
+        function somar() {
+        var peso = window.document.getElementById('peso')
+        var altura = document.getElementById('altura')
+        var pesoNum = Number(peso.value)
+        var alturaNum = Number(altura.value)
+        document.getElementById('res').innerHTML = pesoNum / alturaNum
+        }
+    </script>
+</body>
+</html>
