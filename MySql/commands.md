@@ -120,3 +120,26 @@
 
 * drop table *nome da tabela*;
 * drop table if exists *nome da tabela*;
+
+### Modificando uma coluna na linha
+
+* update *nome da tabela*
+  set *nome da coluna* = '*novo valor*'
+  where *nome de outra coluna* = '*valor dela*';
+* update *nome da tabela*
+  set *nome da coluna* = '*novo valor*', *nome da coluna* = '*novo valor*'
+  where *nome de outra coluna* = '*valor dela*';
+* update *nome da tabela*
+  set *nome da coluna* = '*novo valor*'
+  where *nome de outra coluna* = '*valor dela*'
+  limit 1;
+
+### Deletando linhas/Registros
+
+* delete from *nome da tabela*
+  where *nome da coluna* = '*valor dela*';
+
+### Deletando todos os registros de uma tabela
+
+* truncate table *nome da tabela*;
+* truncate *nome da tabela*;

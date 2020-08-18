@@ -261,3 +261,32 @@ Registrar instâncias separadas com características semelhantes.
 * unique ***O valor não pode ser repetido, mas não significa que seja uma primary_key***
 
 * unsigned ***O valor não pode ser negativo, logo não precisa de sinal, sendo assim, economiza espaço em disco***
+
+---
+
+# Aula 7
+
+## Comandos
+
+### Modificando uma coluna na linha
+
+* update *nome da tabela*
+  set *nome da coluna* = '*novo valor*'
+  where *nome de outra coluna* = '*valor dela*';
+* update *nome da tabela*
+  set *nome da coluna* = '*novo valor*', *nome da coluna* = '*novo valor*'
+  where *nome de outra coluna* = '*valor dela*';
+* update *nome da tabela*
+  set *nome da coluna* = '*novo valor*'
+  where *nome de outra coluna* = '*valor dela*'
+  limit 1;
+
+### Deletando linhas/Registros
+
+* delete from *nome da tabela*
+  where *nome da coluna* = '*valor dela*';
+
+### Deletando todos os registros de uma tabela
+
+* truncate table *nome da tabela*;
+* truncate *nome da tabela*;
