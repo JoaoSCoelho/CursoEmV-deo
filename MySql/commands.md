@@ -143,3 +143,11 @@
 
 * truncate table *nome da tabela*;
 * truncate *nome da tabela*;
+
+### Mostrando o comando utilizado para criar a tabela
+
+* show create table *nome da tabela*;
+
+### Mostrando o comando utilizado para criar o banco de dados
+
+* show create database *nome do banco*;
