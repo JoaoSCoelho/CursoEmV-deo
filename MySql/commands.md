@@ -151,3 +151,45 @@
 ### Mostrando o comando utilizado para criar o banco de dados
 
 * show create database *nome do banco*;
+
+### Selecionar colunas ordenando por uma determinada coluna
+
+* select * from *nome da tabela*
+  order by *nome da coluna*; **De cima para baixo**
+* select * from *nome da tabela*
+  order by *nome da coluna* asc; **De cima para baixo também**
+* select * from *nome da tabela*
+  order by *nome da coluna* desc; **De baixo para cima**
+
+### Selecionar colunas especificas ordenando por uma determinada coluna
+
+* select *nome da coluna*, *nome de outra coluna*, *nome de outra coluna* from *nome da tabela*
+  order by *nome de uma coluna*;
+
+### Selecionar colunas especificas ordendando por mais de uma tabela
+
+* select *nome da coluna*, *nome de outra coluna*, *nome de outra coluna* from *nome da tabela*
+  order by *nome de uma coluna*, *nome de outra coluna*;
+
+### Selecionar colunas ordenando por uma determinada tabela e filtrando por linhas
+
+* select * from *nome da tabela*
+  where *nome da coluna* = '*valor da coluna*'
+  order by *nome de uma coluna*;
+* select * from *nome da tabela*
+  where *nome da coluna* <= '*valor da coluna*' **Não necessariamente precisa ser uma igualdade!**
+  order by *nome de uma coluna*;
+* select *nome da coluna*, *nome de outra coluna* from *nome da tabela*
+  where *nome de uma coluna* between '*valor inicial*' and '*valor final*' **Todos os registros que tenham o valor na *coluna tal* entre o *valor inicial* e o *valor final***
+  order by *nome de uma coluna* desc, *nome de outra coluna*;
+
+### Selecionar colunas filtrando por linhas
+
+* select * from *nome da tabela*
+  where *nome da coluna* between '*valor inicial*' and '*valor final*'; **Todos os registros que tenham o valor na *coluna tal* entre o *valor inicial* e o *valor final***
+* select * from *nome da tebala*
+  where *nome da coluna* in (2014, 2016); **Todos os registros que tenham o valor na *coluna tal* iguais aos valores dentro do *in ()***
+* select * from *nome da tabela*
+  where *nome da coluna* > *valor* and *nome de outra coluna* < *outro valor*
+* select * from *nome da tabela*
+  where *nome da coluna* > *valor* or *nome de outra coluna* < *outro valor*
