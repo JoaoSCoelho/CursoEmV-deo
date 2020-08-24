@@ -193,3 +193,35 @@
   where *nome da coluna* > *valor* and *nome de outra coluna* < *outro valor*
 * select * from *nome da tabela*
   where *nome da coluna* > *valor* or *nome de outra coluna* < *outro valor*
+* select * from *nome da tabela*
+  where *nome de uma coluna* like '*valor dela*%'; **Todos os registros que começem com o valor tal**
+* select * from *nome da tabela*
+  where *nome de uma coluna* like '%*valor dela*'; **Todos os registros que terminem com o valor tal**
+* select * from *nome da tabela*
+  where *nome de uma coluna* like '%*valor dela*%'; **Todos os registros que tenham o valor tal naquela coluna**
+
+### Selecionar colunas distinguindo seus valores
+
+* select distinct *nome da coluna* from *nome da tabela*; **Seleciona todos os registros, mas sem repetição de nenhum deles**
+
+### Contar registros
+
+* select count(*) from *nome da tabela*;
+* select count(*) from *nome da tabela*
+  where *nome da coluna* = '*valor dela*'; 
+
+### Pegar o maior valor de uma coluna
+
+* select max(*nome da coluna*) from *nome da tabela*;
+
+### Pegar o menor valor de uma coluna
+
+* select min(*nome da coluna*) from *nome da tabela*;
+
+### Somar todos os valores de uma coluna
+
+* select sum(*nome da coluna*) from *nome da tabela*;
+
+### Pegar a média dos valores de uma coluna
+
+* select avg(*nome da coluna*) from *nome da tabela*;

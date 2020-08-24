@@ -342,6 +342,12 @@ Registrar instâncias separadas com características semelhantes.
 
 * select * from *nome da tabela*
   where *nome da coluna* between '*valor inicial*' and '*valor final*'; **Todos os registros que tenham o valor na *coluna tal* entre o *valor inicial* e o *valor final***
+* select * from *nome da tebala*
+  where *nome da coluna* in (2014, 2016); **Todos os registros que tenham o valor na *coluna tal* iguais aos valores dentro do *in ()***
+* select * from *nome da tabela*
+  where *nome da coluna* > *valor* and *nome de outra coluna* < *outro valor*;
+* select * from *nome da tabela*
+  where *nome da coluna* > *valor* or *nome de outra coluna* < *outro valor*;
 
 ## Operadores lógicos
 
@@ -352,3 +358,78 @@ Registrar instâncias separadas com características semelhantes.
 * **<** *menor que*
 * **>=** *maior ou igual a*
 * **<=** *menor ou igual a* 
+
+# Aula 12
+
+## Comandos
+
+### Selecionar colunas filtrando por linhas
+
+* select * from *nome da tabela*
+  where *nome de uma coluna* like '*valor dela*%'; **Todos os registros que começem com o valor tal**
+* select * from *nome da tabela*
+  where *nome de uma coluna* like '%*valor dela*'; **Todos os registros que terminem com o valor tal**
+* select * from *nome da tabela*
+  where *nome de uma coluna* like '%*valor dela*%'; **Todos os registros que tenham o valor tal naquela coluna**
+
+### Selecionar colunas distinguindo seus valores
+
+* select distinct *nome da coluna* from *nome da tabela*; **Seleciona todos os registros, mas sem repetição de nenhum deles**
+
+### Contar registros
+
+* select count( * ) from *nome da tabela*;
+* select count( * ) from *nome da tabela*
+  where *nome da coluna* = '*valor dela*'; 
+
+### Pegar o maior valor de uma coluna
+
+* select max(*nome da coluna*) from *nome da tabela*;
+
+### Pegar o menor valor de uma coluna
+
+* select min(*nome da coluna*) from *nome da tabela*;
+
+### Somar todos os valores de uma coluna
+
+* select sum(*nome da coluna*) from *nome da tabela*;
+
+### Pegar a média dos valores de uma coluna
+
+* select avg(*nome da coluna*) from *nome da tabela*;
+
+## Operadores lógicos
+
+* **like** *semelhança*
+* **not like** *não semelhança*
+* **%** *nenhum ou vários caracteres*
+* **_** *algum caractere*
+
+## Exercícios
+
+* **Uma lista com o nome de todas as gafanhotas**
+  * R.: select nome from gafanhotos
+        where sexo = 'F';
+* **Uma lista com os dados de todos aqueles que nasceram entre 1º de Janeiro de 2000 e 31 de Dezembro de 2015**
+  * R.: select * from gafanhotos
+        where nascimento between '2000-01-01' and '2015-12-31';
+* **Uma lista com o nome de todos os homens de trabalham como programadores**
+  * R.: select nome from gafanhotos
+        where sexo = 'M' and profissao = 'Programador';
+* **Uma lista com os dados de todas as mulheres que nasceram no Brasil e que têm seu nome iniciando com a letra J**
+  * R.: select * from gafanhotos
+        where sexo = 'F' and nacionalidade = 'Brasil' and nome like 'j%';
+* **Uma lista com o nome e a nacionalidade de todos os homens que têm Silva no nome, não nasceram no Brasil e pesam menos de 100Kg**
+  * R.: select nome, nacionalidade from gafanhotos
+        where sexo = 'M' and nacionalidade != 'Brasil' and nome like '%silva%' and peso < '100';
+* **Qual a maior altura entre gafanhotos homens que moram no Brasil**
+  * R.: select max(altura) from gafanhotos
+        where sexo = 'M' and nacionalidade = 'Brasil';
+* **Qual a média de peso entre os gafanhotosa cadastrados**
+  * R.: select avg(peso) from gafanhotos;
+* **Qual é o menor peso entre as gafanhotos mulheres que nasceram foram do Brasil e entre 1º de Janeiro de 1990 e 31 de Dezembro de 2000**
+  * R.: select min(peso) from gafanhotos
+        where sexo = 'F' and nacionalidade != 'Brasil' and nascimento between '1990-01-01' and '2000-12-31';
+* **Quantas gafanhotos mulheres têm mais de 1.90m de altura**
+  * R.: select count(*) from gafanhotos
+        where sexo = 'F' and altura > '1.90';
