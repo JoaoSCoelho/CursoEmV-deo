@@ -291,6 +291,8 @@ Registrar instâncias separadas com características semelhantes.
 * truncate table *nome da tabela*;
 * truncate *nome da tabela*;
 
+---
+
 # Aula 10
 
 ## Comandos
@@ -302,6 +304,8 @@ Registrar instâncias separadas com características semelhantes.
 ### Mostrando o comando utilizado para criar o banco de dados
 
 * show create database *nome do banco*;
+
+---
 
 # Aula 11
 
@@ -358,6 +362,8 @@ Registrar instâncias separadas com características semelhantes.
 * **<** *menor que*
 * **>=** *maior ou igual a*
 * **<=** *menor ou igual a* 
+
+---
 
 # Aula 12
 
@@ -433,3 +439,49 @@ Registrar instâncias separadas com características semelhantes.
 * **Quantas gafanhotos mulheres têm mais de 1.90m de altura**
   * R.: select count(*) from gafanhotos
         where sexo = 'F' and altura > '1.90';
+
+---
+
+# Aula 13
+
+## Comandos
+
+### Agrupando registros
+
+* select *nome da coluna* from *nome da tabela*
+  group by *nome da coluna*;
+* select *nome da coluna*, count(*nome da coluna*) from *nome da tabela*
+  group by *nome da coluna*;
+* select *nome da coluna* from *nome da tabela*
+  where *nome da coluna* = '*valor dela*'
+  group by *nome da coluna*;
+* select *nome da coluna*, count( * ) from *nome da tabela*
+  group by *nome da coluna*
+  having count(*nome da coluna*) >= *valor dela*
+  order by count(*) desc;
+* select *nome da coluna*, count(*) from *nome da tabela*
+  where *nome da coluna* > '*valor dela*'
+  group by *nome da coluna*
+  having *nome da coluna* > (select avg(*nome da coluna*) from *nome da tabela*);
+
+## Exercícios
+
+* **Uma lista com as profissões dos gafanhotos e seus respectivos quantitativos**
+  * R.: select profissao, count(profissao) from gafanhotos
+        group by profissao;
+* **Quantos gafanhotos homens e quantos gafanhotos mulheres nasceram após 1º de Janeiro de 2005**
+  * R.: select sexo, count(*) from gafanhotos
+        where nascimento > 2005-01-01
+        group by sexo;
+* **Uma lista com os gafanhotos que nasceram fora do Brasil, mostrando o país de origem e o total de pessoas nascidas lá. Só nos interessam os países que tenham mais de 3 gafanhotos com essa nacionalidade**
+  * R.: select nacionalidade, count(*) from gafanhotos
+        where nacionalidade != 'Brasil'
+        group by nacionalidade
+        having count(nacionalidade) > '3';
+* **Uma lista agrupada pela altura dos gafanhotos, mostrando quantas pessoas pesam mais de 100Kg e que estão acima da média de altura de todos os cadastrados**
+  * R.: select altura, count(*) from gafanhotos
+        where peso > '100'
+        group by altura
+        having altura > (select avg(altura) from gafanhotos);
+
+---

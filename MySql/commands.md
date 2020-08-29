@@ -225,3 +225,21 @@
 ### Pegar a média dos valores de uma coluna
 
 * select avg(*nome da coluna*) from *nome da tabela*;
+
+### Agrupando registros
+
+* select *nome da coluna* from *nome da tabela*
+  group by *nome da coluna*;
+* select *nome da coluna*, count(*nome da coluna*) from *nome da tabela*
+  group by *nome da coluna*;
+* select *nome da coluna* from *nome da tabela*
+  where *nome da coluna* = '*valor dela*'
+  group by *nome da coluna*;
+* select *nome da coluna*, count( * ) from *nome da tabela*
+  group by *nome da coluna*
+  having count(*nome da coluna*) >= *valor dela*
+  order by count(*) desc;
+* select *nome da coluna*, count(*) from *nome da tabela*
+  where *nome da coluna* > '*valor dela*'
+  group by *nome da coluna*
+  having *nome da coluna* > (select avg(*nome da coluna*) from *nome da tabela*);
