@@ -485,3 +485,9 @@ Registrar instâncias separadas com características semelhantes.
         having altura > (select avg(altura) from gafanhotos);
 
 ---
+
+# Aula 14
+
+## Comandos
+
+### 
