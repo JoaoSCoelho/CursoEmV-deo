@@ -486,8 +486,30 @@ Registrar instâncias separadas com características semelhantes.
 
 ---
 
-# Aula 14
+# Aula 15
 
 ## Comandos
 
-### 
+### Adicionar chaves estrangeiras
+
+* alter table *nome da tabela* 
+  add foreign key (*nome da coluna*)
+  references *nome da tabela de referencia*(*nome da chave primaria da tabela de referência*);
+
+### Utilizando o join
+
+* select *nome da tabela*.*nome da coluna*, *nome da tabela*.*nome da coluna*, *nome das tabela*.*nome da coluna*
+  from *nome da tabela* join *nome da outra tabela*
+  on *nome da tabela*.*nome de sua coluna* = *nome da tabela*.*nome de sua coluna*;
+* select g.nome, c.nome, c.ano
+  from gafanhotos as g join cursos as c
+  on c.idcurso = g.cursopreferido;
+* select g.nome, c.nome, c.ano
+  from gafanhotos as g inner join cursos as c
+  on c.idcurso = g.cursopreferido;
+* select g.nome, c.nome, c.ano
+  from gafanhotos as g left outer join cursos as c
+  on c.idcurso = g.cursopreferido;
+* select g.nome, c.nome, c.ano
+  from gafanhotos as g left join cursos as c
+  on c.idcurso = g.cursopreferido;
